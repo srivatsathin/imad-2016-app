@@ -9,8 +9,74 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var template ={ title: "Srivats athindran !!!",
+heading : "article-one",
+date : "oct 07,2016",
+content : `<div>
+            <h1>
+                Magizhchi !!!
+            </h1>
+            <p>
+               First paragraph for the article will be displayed here 
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+            </p>
+            <h2>
+                SECOND !!!
+            </h2>
+            <p>
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+            </p>
+        </div>` };
+        
+function Createtemplate(data){
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+
+        
+   var htmltemplate=   ` <html>
+    <head>
+        <title>
+            COOL !!!
+        </title>
+        <meta name= "viewport" content="width-device-width,initial-scale=1"/>
+         <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+     <div class="container">
+        <div>
+             ${title}
+        </div>
+        <hr/>
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+        <div>
+            ${heading}
+        </div>
+        <div>
+            ${date}
+        </div>
+        ${content}
+     </div>
+    </body>
+</html>`;
+return htmltemplate;
+}
+     
+
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.sendFile(Createtemplate(article-one));
 });
 
 
