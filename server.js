@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articleone ={ title: "Srivats athindran !!!",
+var articles = { articleone : {title: "Srivats athindran !!!",
 heading : "article-one",
 date : "oct 07,2016",
 content : `<div>
@@ -34,8 +34,61 @@ content : `<div>
                 Second paragraph for the article will be displayed here
                 Second paragraph for the article will be displayed here
             </p>
-        </div>` };
-        
+        </div`},
+        articletwo : { title: "Srivats athindran !!!",
+heading : "article-two",
+date : "oct 07,2016",
+content : `<div>
+            <h1>
+                Magizhchi !!!
+            </h1>
+            <p>
+               First paragraph for the article will be displayed here 
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+            </p>
+            <h2>
+                SECOND !!!
+            </h2>
+            <p>
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+            </p>
+        </div>`},
+        articlethree : { title: "Srivats athindran !!!",
+heading : "article-two",
+date : "oct 07,2016",
+content : `<div>
+            <h1>
+                Magizhchi !!!
+            </h1>
+            <p>
+               First paragraph for the article will be displayed here 
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+               First paragraph for the article will be displayed here
+            </p>
+            <h2>
+                SECOND !!!
+            </h2>
+            <p>
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+                Second paragraph for the article will be displayed here
+            </p>
+        </div>`}
+};
+
 function Createtemplate(data){
     var title=data.title;
     var heading=data.heading;
@@ -75,17 +128,9 @@ return htmltemplate;
 }
      
 
-app.get('/article-one', function (req, res) {
-  res.send(Createtemplate(articleone));
-});
-
-
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articlename', function (req, res) {
+    var articlename=req.params.articlename;
+  res.send(Createtemplate(articles[articlename]));
 });
 
 app.get('/ui/main.js', function (req, res) {
