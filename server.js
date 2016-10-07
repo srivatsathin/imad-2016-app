@@ -76,7 +76,7 @@ return htmltemplate;
      
 
 app.get('/article-one', function (req, res) {
-  res.sendFile(Createtemplate(article-one));
+  res.send(Createtemplate(article-one));
 });
 
 
