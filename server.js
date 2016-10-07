@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articles = { articleone : {title: "Srivats athindran !!!",
+var articles = { 'article-one' : {title: "Srivats athindran !!!",
 heading : "article-one",
 date : "oct 07,2016",
 content : `<div>
@@ -35,7 +35,7 @@ content : `<div>
                 Second paragraph for the article will be displayed here
             </p>
         </div`},
-        articletwo : { title: "Srivats athindran !!!",
+        'article-two' : { title: "Srivats athindran !!!",
 heading : "article-two",
 date : "oct 07,2016",
 content : `<div>
@@ -61,8 +61,8 @@ content : `<div>
                 Second paragraph for the article will be displayed here
             </p>
         </div>`},
-        articlethree : { title: "Srivats athindran !!!",
-heading : "article-two",
+        'article-three' : { title: "Srivats athindran !!!",
+heading : "article-three",
 date : "oct 07,2016",
 content : `<div>
             <h1>
