@@ -9,12 +9,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var names =[];
-app.get('/submit-name/:name',function(req,res){
-   var name= req.query.name;
-   names.push(name);
-   res.send(JSON.stringify(names));
-});
 
 
 var counter= 0;
@@ -23,6 +17,12 @@ app.get('/counter', function (req, res) {
    res.send(counter.toString());
 });
 
+var names =[];
+app.get('/submit-name',function(req,res){
+   var name= req.query.name;
+   names.push(name);
+   res.send(JSON.stringify(names));
+});
 
 
 
