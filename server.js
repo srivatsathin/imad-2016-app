@@ -159,7 +159,7 @@ function Createtemplate(data){
             ${heading}
         </div>
         <div>
-            ${date}
+            ${date.toDateString()}
         </div>
         ${content}
      </div>
